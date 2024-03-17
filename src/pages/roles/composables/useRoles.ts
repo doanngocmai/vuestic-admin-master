@@ -68,7 +68,8 @@ export const useRoles = (options?: {
 
     async update(role: Role) {
       isLoading.value = true
-      await updateRole(role)
+      const res = await updateRole(role)
+      console.log(res)
       await fetch()
       isLoading.value = false
     },

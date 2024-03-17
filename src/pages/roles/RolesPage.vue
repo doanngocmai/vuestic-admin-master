@@ -27,7 +27,9 @@ const { init: notify } = useToast()
 const onRoleSaved = async (role: Role) => {
   if (roleToEdit.value) {
     console.log(roleToEdit.value)
-    await rolesApi.update(role)
+    console.log(role)
+    const res = await rolesApi.update(role)
+    console.log(res)
     notify({
       message: `${role.roleName} has been updated`,
       color: 'success',
